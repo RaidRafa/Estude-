@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tela Inicial</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height:100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+
+    body{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(to bottom, #edd6cc 0%, #cbb7aa 60%, #b8a59b 100%);
+      padding:20px;
+    }
+
+    /* Mockup celular */
+    .phone{
+      width:360px;
+      height:780px;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 12px 40px rgba(0,0,0,0.25);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:40px 20px;
+    }
+
+    .user-icon{
+      width:88px;
+      height:88px;
+      border-radius:999px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:36px;
+      border:2px solid #000;
+    }
+    .user-icon svg{ width:44px; height:44px; }
+
+    .stack {
+      width:100%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    /* estilo dos botões criados */
+    .add-btn {
+      width:220px;
+      height:60px;
+      margin:12px 0;
+      background:#c48e6a;
+      border-radius:10px;
+      border:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 4px 8px rgba(0,0,0,0.15);
+      transition: transform .08s;
+    }
+    .add-btn:active { transform: translateY(1px); }
+
+    .add-btn svg { width:28px; height:28px; stroke:#000; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!-- Ícone de usuário -->
+    <div class="user-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="7" r="4"></circle>
+        <path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path>
+      </svg>
+    </div>
+
+    <div class="stack" id="stack">
+      <!-- Primeiro botão aparece aqui -->
+      <button class="add-btn" id="addBtn" aria-label="Adicionar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const stack = document.getElementById('stack');
+    const initialBtn = document.getElementById('addBtn');
+
+    function addNewButton(){
+      const btn = document.createElement("button");
+      btn.className = "add-btn";
+      btn.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>`;
+      btn.onclick = addNewButton;
+      stack.appendChild(btn);
+    }
+
+    initialBtn.addEventListener('click', addNewButton);
+  </script>
+</body>
+</html>
