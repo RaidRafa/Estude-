@@ -1,0 +1,189 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tela de Matérias</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #edd6cc 0%, #cbb7aa 60%, #b8a59b 100%);
+      padding: 20px;
+    }
+
+    /* Mockup celular */
+    .phone {
+      width: 360px;
+      height: 780px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+      background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .user-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      border: 2px solid #000;
+    }
+    .user-icon svg { width: 44px; height: 44px; }
+
+    .stack {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Card  de matéria */
+    .materia {
+      width: 100%;
+      max-width: 300px;
+      height: 50px;
+      margin: 8px 0;
+      border-radius: 10px;
+      background: #c48e6a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+
+    .materia span {
+      font-style: italic;
+    }
+
+    .icons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .icons svg {
+      width: 20px;
+      height: 20px;
+      stroke: #000;
+    }
+
+    /* Card add tarefa*/
+    .register-work{
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border:#8b8a8a solid 1px;
+      border-radius: 15px;
+      padding: 15px;
+    }
+
+    h4{
+      display: flex;
+      flex-direction: column;
+    }
+
+    #tittle{
+      margin: 12px;
+    }
+
+    #descript{
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    #btn_save{
+      margin-top: 10px;
+      padding: 7px;
+      background-color: black;
+      color: white;
+      border-radius: 7px;
+      margin-right: 23px;
+    }
+
+    #btn_cancel{
+      margin-top: 10px;
+      padding: 7px;
+      background-color: black;
+      color: white;
+      border-radius: 7px;
+    }
+
+    .buttons{
+      padding: 10px;
+    }
+
+    #date{
+      margin-top: 5px;
+    }
+    
+
+    /* Botão de adicionar */
+    .add-btn {
+      width: 220px;
+      height: 60px;
+      margin: 16px 0;
+      background: #000;
+      border-radius: 10px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .add-btn svg { width: 28px; height: 28px; stroke: #fff; }
+  </style>
+</head>
+<body>
+  <div class="phone">
+    <!-- Ícone de usuário -->
+    <div class="user-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="7" r="4"></circle>
+        <path d="M5.5 21a8.38 8.38 0 0 1 13 0"></path>
+      </svg>
+    </div>
+
+    <div class="register-work" id="card_add">
+      <table class="card">
+        <h4>
+        <input type="text" id="tittle" placeholder="Titulo">
+        <input type="text" id="descript" placeholder="Descrição">
+        <h4>Data de entrega</h4><input type="date" id="date">
+        </h4>
+        <div class="buttons">
+          <button id="btn_save">Salvar</button>
+          <button id="btn_cancel">Cancelar</button>
+        </div>
+      </table>
+    </div>
+
+      <!-- Botão de adicionar -->
+      <button class="add-btn" id="add-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="Back/script.js"></script>
+</body>
+</html>
